@@ -27,7 +27,7 @@ The original version of the tool here can be found [here, at the FSC identikit g
 
 The static content for the comparison tool is in the [home/static/comp-tool](home/static/comp-tool) directory. This directory contains the data for the tool, along with the javascript and css files. The data are in the "kb" directory, with each subdirectory being an individual knowledge base. The other files in [home/static/comp-tool](home/static/comp-tool) are the javascript and css files for the tool, and all are required. 
 
-The html pages for the tool are found in the [search/templates/search](search/templates/search) directory. These html files are modifications of the original files from the comparison tool, and are required for the tool to work. An example file can be found [here](search/templates/search/comp-mk.html) The only changes made to these files are the addition of the `{% load staticfiles %}` tag at the top of the file, and the addition of the `{% static %}` tag to the javascript and css file paths.
+The html pages for the tool are found in the [search/templates/search](search/templates/search) directory. These html files are modifications of the original files from the comparison tool, and are required for the tool to work. An example file can be found [here](search/templates/search/comp-disco.html) The only changes made to these files are the addition of the `{% load staticfiles %}` tag at the top of the file, and the addition of the `{% static %}` tag to the javascript and css file paths.
 
 This repository servers to demonstrate one possible way to implement the tool in Wagtail. There are likely other ways to do so, which may be more appropriate for other projects.
 
@@ -35,7 +35,7 @@ This repository servers to demonstrate one possible way to implement the tool in
 
 ### General information
 
-This tool gathers data from 5 csv files. An example of these 5 files are in the [home/static/comp-tool/kb/mkarchives](home/static/comp-tool/kb/mkarchives) directory. The files are:
+This tool gathers data from 5 csv files. An example of these 5 files are in the [home/static/comp-tool/kb/disco](home/static/comp-tool/kb/disco) directory. The files are:
 - taxa.csv
 - characters.csv
 - media.csv
@@ -83,14 +83,14 @@ The discovery data are structured as follows:
 3. As a minimum, replace the taxa.csv with the new data. 
    - If required, update the other csv files.
 4. In search/templates/search, copy an existing comparison tool html file, and rename it to the name of the new knowledge base.
-5. Update this new html file to point to the new knowledge base. `tombiokbpath: kb ? kb : "{% static 'comp-tool/kb/mkarchives/' %}",` needs to be updated to point to the new knowledge base.
+5. Update this new html file to point to the new knowledge base. `tombiokbpath: kb ? kb : "{% static 'comp-tool/kb/disco/' %}",` needs to be updated to point to the new knowledge base.
 6. Update the compTool/search/views.py with a new return for the new template. An example is included below. 
 `def compDisco(request):
     return TemplateResponse(
         request,
-        "search/comp-mk-disco.html",
+        "search/comp-disco.html",
     )`
-7. Update the compTool/compTool/urls.py with a new url for the new template. An example is included below. You need to modifiy search_views.{function name} to match the function name in the views.py file. `path("comp-mk-disco", search_views.compDiscoShort, name="comp-disco-moving-short"),`
+7. Update the compTool/compTool/urls.py with a new url for the new template. An example is included below. You need to modifiy search_views.{function name} to match the function name in the views.py file. `path("comparison/", search_views.compDisco, name="comp-disco")`
 
 ## Known issues
 
