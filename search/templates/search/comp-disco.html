@@ -1,0 +1,63 @@
+<!-- Comparison search is a tool being developed to allow users to locate content that is similar to what they are looking for; highlighting close matches and providing detail for partials. 
+Copyright (C) Field Studies Council (2023) The Crown (2023)-->
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv='cache-control' content='no-cache'>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>CGDC comp tool demo</title>
+    <script>
+        var url = new URL(window.location.href);
+        var kb = url.searchParams.get("kb");
+
+        var tombiovis = {
+            opts: {
+                //hideVisDropdown: false,
+                hideVisDropdown: false,
+                tools: ["vis1", "vis2", "vis3", "vis4", "vis5"],
+                //tools: ["vis5"],
+                //selectedTool: "vis1",
+                //lastVisualisation: "vis1",
+                //gui: "guiOnsenUi",
+                //ignoreNegativeScoring: false,
+                //pwaSupress: true,
+                pwaSupress: false,
+                toolconfig: {
+                    genKeyinput: {
+                        selectedGroup: "Structure",
+                    },
+                    //vis4: {
+                    //    subTitleChar: "CommonName"
+                    //},
+                    //vis6: {
+                    //    keyinput: "keyInputOnsenUi"
+                    //}
+                },
+                checkKB: true,
+                devel: true,
+                //tombiopath: "tombio/",
+                tombiopath: "{% static 'comp-tool/tombio/' %}",
+                //tombiokbpath: kb ? kb : "kb/biscuits/",
+                tombiokbpath: kb ? kb : "{% static 'comp-tool/kb/disco/' %}",
+            },
+        }
+    </script>
+    <!-- This line required above script imports for electron environment -->
+    <script>if (typeof module === 'object') { window.module = module; module = undefined; }</script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/2.5.6/core.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'comp-tool/site.css' %}">
+
+</head>
+<body>
+    <h1 id="tombiod3-header"></h1>
+    <div id="tombiod3"></div>
+    <div id="tombiod3-footer" style="width: 100%"></div>
+    <script type = "text/javascript" src="{% static 'comp-tool/tombio/load.js' %}"></script>
+</body>
+</html>
