@@ -1,0 +1,11 @@
+Key,Type,Mandatory,Value,Date,Notes
+#Main metadata about the key (e.g. for citing the key),,,,,
+title,metadata,yes,Discovery,,
+year,metadata,yes,2023,,
+authors,metadata,yes,OHOS project,,
+publisher,metadata,no,The National Archives,,
+location,metadata,no,The National Archives,,
+contact,metadata,no,,,
+version,metadata,yes,0.0.1,,
+#Releases - keep track of the release history below this line. Most recent releases at the top. The version code in the 'value' column below this line should match that of the current release above it.,,,,,
+release,history,no,0.0.1,26/04/23,Initial data set
