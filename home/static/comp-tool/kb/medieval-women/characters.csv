@@ -1,12 +1,13 @@
 Group,Character,Label,Help,HelpShort,Status,ValueType,ControlType,Params,Weight,Latitude
 ,Creator,Record creator,,,key,text,multi,,10,
-,Date_of_creation,Date the record was created,,,key,numeric,spin,"2017,2018,1",10,
+,Date_of_creation,Date the record was created,,,key,numeric,spin,"1298,1590,10",10,10
 ,area,Place,,,key,text,multi,,10,
 ,Access,Access rights,,,key,text,multi,,10,
 ,Copyright_holder,Copyright holder,,,key,text,multi,,10,
-,Repository,Record is within the following repository,,,key,text,multi,,10,
+,Archive_name,Record is within the following archive,,,key,text,multi,,10,
 ,Storage_location,Digital or Physical,,,key,text,multi,,10,
 ,Level,Archival hierarchy level,"E.g., is it a item or a collection",,key,text,multi,,10,
 ,size,Number of records,,,key,numeric,spin,"1,11,1",10,
 ,title,Title of the record,,,key,text,multi,,10,
 ,Document_Type,Record type,"E.g. is it a map, a biography, etc. ",,key,text,multi,,10,
+Taxonomy,Genus,Archive,,,display,,,,,
