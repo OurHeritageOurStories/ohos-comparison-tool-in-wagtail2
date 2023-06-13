@@ -1,5 +1,5 @@
 Group,Character,Label,Help,HelpShort,Status,ValueType,ControlType,Params,Weight,Latitude
-,Creator,Record creator,,,key,text,multi,,10,
+,Creator,Mentioned People,,,key,text,multi,,10,
 ,Date_of_creation,Date the record was created,,,key,numeric,spin,"1298,1590,10",10,10
 ,area,Place,,,key,text,multi,,10,
 ,Access,Access rights,,,key,text,multi,,10,
