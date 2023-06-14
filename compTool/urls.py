@@ -14,6 +14,7 @@ urlpatterns = [
     path("documents/", include(wagtaildocs_urls)),
     path("search/", search_views.search, name="search"),
     path("comparison/", search_views.compDisco, name="comp-disco"),
+    path("comparison-medieval", search_views.compMedieval, name="comp-medieval")
 ]
 
 

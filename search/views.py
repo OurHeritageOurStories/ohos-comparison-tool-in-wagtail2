@@ -39,3 +39,9 @@ def compDisco(request):
         request,
         "search/comp-disco.html",
     )
+
+def compMedieval(request):
+    return TemplateResponse(
+        request,
+        "search/comp-medieval.html",
+    )

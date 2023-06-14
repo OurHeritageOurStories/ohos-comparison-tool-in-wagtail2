@@ -1,6 +1,6 @@
 Key,Type,Mandatory,Value,Date,Notes
 #Main metadata about the key (e.g. for citing the key),,,,,
-title,metadata,yes,Discovery,,
+title,metadata,yes,OHOS Comparison tool,,
 year,metadata,yes,2023,,
 authors,metadata,yes,OHOS project,,
 publisher,metadata,no,The National Archives,,
